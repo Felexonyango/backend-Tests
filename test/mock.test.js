@@ -19,7 +19,7 @@ chai.should();
  })
 
 
-describe ("Users", () => {
+describe ("Mock", () => {
     describe("GET /users", () => {
         it("should get all users", (done) => {
             chai.request(app)
@@ -33,3 +33,4 @@ describe ("Users", () => {
         });
     })
 })
+

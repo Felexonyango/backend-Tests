@@ -4,8 +4,8 @@
   "main": "app.js",
   "license": "MIT",
   "scripts": {
-    "start": " nodemon start ",
-    "test": "mocha"
+    "start": "nodemon app.js",
+    "test": "mocha --timeout 10000"
   },
   "dependencies": {
     "chai": "^4.3.6",

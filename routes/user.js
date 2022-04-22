@@ -1,14 +1,36 @@
 const express= require('express')
-const app = require('../app')
+const User = require('../model/user')
 const router =express.Router()
 
-router.post("/user",(req,res)=>{
+router.get('/user',async(req, res)=>{
+    try{
+        const user = await User.find({})
+
+        if(user){
+            res.status(200).json(user)
+
+        }
+     
+    }
+    catch(err){
+  console.log(err)
+    }
+})
+
+
+router.post("/user",async(req,res)=>{
     try{
  const {name,email} = req.body
+ const user =  await User({
+    name,
+    email
+})
+ await user.save()
+ res.status(200).json({msg: 'success'})
 
     }
     catch(err){
-
+console.log(err)
 
     }
 })
