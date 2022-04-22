@@ -1,8 +1,11 @@
 {
   "name": "EXpressTest",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "app.js",
   "license": "MIT",
+  "scripts": {
+    "test": "mocha"
+  },
   "dependencies": {
     "chai": "^4.3.6",
     "chai-http": "^4.3.0",
