@@ -14,14 +14,18 @@ Platform:
   linux x64
 
 Trace: 
-  Error: EACCES: permission denied, unlink '/home/felex/EXpressTest/node_modules/@szmarczak/http-timer/README.md'
+  Error: EACCES: permission denied, unlink '/home/felex/EXpressTest/node_modules/@sindresorhus/is/license'
 
 npm manifest: 
   {
     "name": "EXpressTest",
     "version": "1.0.0",
-    "main": "index.js",
+    "main": "app.js",
     "license": "MIT",
+    "scripts": {
+      "start": " nodemon start ",
+      "test": "mocha"
+    },
     "dependencies": {
       "chai": "^4.3.6",
       "chai-http": "^4.3.0",
