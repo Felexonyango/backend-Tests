@@ -26,7 +26,26 @@ describe('USERS', () => {
               });
         });
     });
+    describe('/POST user', () => {
+        it('it should  POST user', (done) => {
+            let user = {
+                name: 'John doe',
+                email: "johndoe@gmail.com",
+               
+            }
+            
+          chai.request(app)
+              .post('/api/user')
+              .send(user)
+              .end((err, res) => {
+                    res.should.have.status(200);
+                    res.should.have.a('object')
+       
+                done();
+              });
+        });
+  
+    });
+  });
 
-
-})
 
