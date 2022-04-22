@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const fs = require('fs')
-const users = JSON.parse(fs.readFileSync('database/users.json', 'utf-8'))
+const users = JSON.parse(fs.readFileSync('mockDB/users.json', 'utf-8'))
 
 router.get('/test',(req,res,_next)=>{
     return res.status(200).json({message:'Testing'});
