@@ -9,10 +9,10 @@ router.get('/test',(req,res,_next)=>{
 
 /* GET users listing. */
 router.get('/users',(req, res,_next)=> {
-    res.json(users,)
+    res.json(users)
   });
-  
 
+  
 
 
 
