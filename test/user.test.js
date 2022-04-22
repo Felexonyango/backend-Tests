@@ -1,5 +1,5 @@
 const app =require('../app')
-let mongoose = require("mongoose");
+const  mongoose = require("mongoose");
 const User = require('../model/user');
 const chai = require ('chai');
 const chaiHttp = require ('chai-http');
@@ -43,6 +43,27 @@ describe('USERS', () => {
        
                 done();
               });
+        });
+  
+    });
+    describe('/GET user by id', () => {
+        it('it should  return  user by id', (done) => {
+            let user=new User({ name:"john doe",email:"johndoe@gmail.com"})
+         user.save((err, user) => {
+            chai.request(app)
+            .get('/api/user/'+ user.id)
+            .send(user)
+            .end((err, res) => {
+                  res.should.have.status(200);
+                  res.should.have.a('object')
+                  res.body.should.have.property('name');
+                  res.body.should.have.property('email');
+                  res.body.should.have.property('_id').eql(user.id);
+     
+              done();
+            });
+         })
+     
         });
   
     });

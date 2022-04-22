@@ -26,7 +26,7 @@ router.post("/user",async(req,res)=>{
     email
 })
  await user.save()
- res.status(200).json({msg: 'success'})
+ res.status(200).json(user)
 
     }
     catch(err){
@@ -35,6 +35,18 @@ console.log(err)
     }
 })
 
+router.get('/user/:id',async(req, res)=>{
+    try{
+        const user = await User.findById(req.params.id)
+        if(user){
+            res.status(200).json(user)
+        }
+    }
+    catch(err){
+        console.log(err)
+    }
+    
+})
 
 
 
