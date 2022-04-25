@@ -5,7 +5,7 @@
   "license": "MIT",
   "scripts": {
     "start": "nodemon app.js",
-    "test": "mocha --timeout 50000"
+    "test": "mocha --timeout 50000 --exit"
   },
   "dependencies": {
     "chai": "^4.3.6",
