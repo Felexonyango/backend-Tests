@@ -7,7 +7,7 @@ chai.should();
  describe("Test",()=>{
    describe("GET",()=>{
        it("should return Testing",(done)=>{
-           chai.request(app)
+           request(app)
            .get('/test')
            .end((err,res)=>{
                res.should.have.status(200);
